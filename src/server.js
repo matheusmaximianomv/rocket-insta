@@ -38,8 +38,8 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 /* Configuração de Rotas */
 app.use(require('./routes'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const URL = process.env.URL || 'http://www.localhost';
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server Running In ${URL}:${PORT}`);
 });

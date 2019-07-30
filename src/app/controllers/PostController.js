@@ -8,7 +8,7 @@ const authToken = require('./../../helpers/token');
 module.exports = {
     async index (req, res) {
         try {
-            const posts = await Post.find().sort('-createdAt').populate('author', '_id name email');
+            const posts = await Post.find().sort('-createdAt').populate('author', '_id name email image');
             return res.status(200).json(posts);
         } catch (error) {
             console.log(error);

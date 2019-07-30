@@ -16,7 +16,8 @@ module.exports = {
                 const token = await authToken.generateToken({ id : _id, email : Email, name, image});
     
                 return res.status(200).send({ token, email : Email, name, image});
-            }
+            } else 
+                return res.status(400).json({ erro : { description: 'Email ou senha inválidos' }});
             
         } catch (error) {
             console.log(error);

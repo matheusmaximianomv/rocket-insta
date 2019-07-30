@@ -25,6 +25,7 @@ routes.post('/posts/:id/like', authorization.authorized, LikeController.store)
 const UserController = require('./app/controllers/UserController');
 
 routes.get('/users', authorization.authorized, UserController.index);
+routes.get('/users/profile', authorization.authorized, UserController.show);
 routes.post('/users/signup', upload.any(), UserController.store);
 routes.put('/users', authorization.authorized, upload.single('image'), UserController.update);
 // Login
