@@ -9,7 +9,7 @@ const authorization = require('./app/middlewares/authorization');
 
 /* Home */
 routes.get('/', (req, res) => {
-    return res.status(200).send("Welcome to the API - RocketInsta");
+    return res.status(200).send("Bem vindo a API - RocketInsta");
 });
 
 /* Posts */
