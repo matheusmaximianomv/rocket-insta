@@ -9,7 +9,7 @@ const authorization = require('./app/middlewares/authorization');
 
 /* Home */
 routes.get('/', (req, res) => {
-    return res.status(200).send("Bem vindo a API - RocketInsta");
+    return res.status(200).json({name : "RocketInsta", description : "Apliação Rest para o desenvolvimento de uma cópia do Instagram com finalidades de aprendizado", version : '1.1.5'});
 });
 
 /* Posts */
