@@ -5,7 +5,7 @@ module.exports = {
         const { id } = req.params;
         
         try {
-            const post = await Post.findById(id);
+            const post = await Post.findById(id).populate('author', 'name  image');
             try {
                 post.likes += 1;
                 await post.save();
