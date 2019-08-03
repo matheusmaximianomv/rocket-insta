@@ -101,7 +101,7 @@ module.exports = {
 
                 user.image = fileName;
             }
-            
+
             user.name = name;
             user.email = email;
             user.__v += 1; 
@@ -110,7 +110,7 @@ module.exports = {
                 await user.save();
                 return res.status(200).json(user);
             } catch (error) {
-                return res.status(500).send('Erro ao cadastrar imagem');
+                return res.status(500).send('Esse email já está em uso');
             }
 
         } catch (error) {
