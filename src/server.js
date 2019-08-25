@@ -35,6 +35,12 @@ app.use(express.urlencoded({
 /* Configurando rotas de acesso as imagens */
 app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resized')));
 
+/* Configurando rota para download de logs */
+app.use('/download/logs', (req, res) => {
+    console.log('Download de Logs Realizado.');
+    return res.status(200).download(path.resolve(__dirname, '..', 'logs', 'access.log'));
+});
+
 /* Configuração de Rotas */
 app.use(require('./routes'));
 
