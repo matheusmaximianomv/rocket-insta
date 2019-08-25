@@ -32,6 +32,11 @@ app.use(express.urlencoded({
     extended : true
 }))
 
+/* Ativando Bibliotecas na Aplicação */
+// Criando Arquivo de log.
+const accessLogStream = fs.createWriteStream( path.resolve(__dirname, '..', 'logs', 'access.log'), {flags: 'a'} );
+app.use(morgan('combined', {stream: accessLogStream}));
+
 /* Configurando rotas de acesso as imagens */
 app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resized')));
 
