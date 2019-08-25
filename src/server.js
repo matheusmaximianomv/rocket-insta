@@ -2,8 +2,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const fs = require('fs');
 const cors = require('cors');
 const http = require('http');
+const morgan = require('morgan');
 
 /* Instância de Bibliotecas */
 const app = express();
